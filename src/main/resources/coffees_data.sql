@@ -1,0 +1,5 @@
+--INSERT INTO coffee (id, name) VALUES (1, 'Espresso');
+--INSERT INTO coffee (id, name) VALUES (2, 'Cappuccino');
+--INSERT INTO coffee (id, name) VALUES (3, 'Latte');
+--INSERT INTO coffee (id, name) VALUES (4, 'Ristretto');
+--INSERT INTO coffee (id, name) VALUES (5, 'Macchiato');

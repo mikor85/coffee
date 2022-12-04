@@ -2,12 +2,11 @@ package com.example.coffee;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.util.UUID;
 
 @Entity // для класса создается таблица в базе данных
-// @Table(name = "cof") если хотим, чтобы таблица называлась на как класс
+// @Table(name = "cof") если хотим, чтобы таблица называлась не как класс
 public class Coffee {
     @Id
     private final String id;
