@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    function createCoffee()
+    {
+        // window.alert("hello");
+        var url = "/coffees";
+
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+
+        var coffee = {};
+        coffee.id = id;
+        coffee.name = name;
+
+        // JSON = Javascript Object Notation
+        // {"id": "123", "name" = "My Coffee"}
+        var json = JSON.stringify(coffee); // объект -> строка
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.send(json);
+        // window.alert("url is: " + url);
+    }
+</script>
+
+
+<!--
+POST /coffees
+-->
+
+<p>ver 1</p>
+
+<form name="myform">
+    <input type="text" id="id" name="id"/><br/>
+    <input type="text" id="name" name="name"/>
+</form>
+
+<button type="button" onclick="createCoffee();">Create</button>

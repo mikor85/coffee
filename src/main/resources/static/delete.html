@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    function deleteCoffeeById()
+    {
+        // window.alert("hello");
+        var url = "/coffees/" + document.getElementById("id").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", url, true);
+        xhr.send(null);
+        // window.alert("url is: " + url);
+    }
+</script>
+
+<!--
+DELETE http://localhost:8080/coffees/aeb62ee3-3111-41ff-b720-a7225b684b75
+
+-->
+
+<p>ver 1</p>
+<form name="myform">
+    <input type="text" id="id" name="id"/>
+</form>
+<button type="button" onclick="deleteCoffeeById();">Delete</button>
