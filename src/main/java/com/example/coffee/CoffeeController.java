@@ -3,8 +3,10 @@ package com.example.coffee;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -22,6 +24,19 @@ public class CoffeeController {
     // и добавит ссылку на него в это поле
     @Autowired
     CoffeeRepository coffeeRepository;
+
+    @Component
+    public class CoffeesDBInit implements CommandLineRunner{
+
+        @Override
+        public void run(String... args) throws Exception {
+            coffeeRepository.save(new Coffee("Espresso"));
+            coffeeRepository.save(new Coffee("Cappuccino"));
+            coffeeRepository.save(new Coffee("Latte"));
+            coffeeRepository.save(new Coffee("Ristretto"));
+            coffeeRepository.save(new Coffee("Macchiato"));
+        }
+    }
 
     public CoffeeController() {
 //        coffees.addAll(
