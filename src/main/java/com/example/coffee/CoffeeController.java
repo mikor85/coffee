@@ -26,15 +26,17 @@ public class CoffeeController {
     CoffeeRepository coffeeRepository;
 
     @Component
-    public class CoffeesDBInit implements CommandLineRunner{
+    public class CoffeesInitDB implements CommandLineRunner {
 
         @Override
         public void run(String... args) throws Exception {
-            coffeeRepository.save(new Coffee("Espresso"));
-            coffeeRepository.save(new Coffee("Cappuccino"));
-            coffeeRepository.save(new Coffee("Latte"));
-            coffeeRepository.save(new Coffee("Ristretto"));
-            coffeeRepository.save(new Coffee("Macchiato"));
+            coffeeRepository.saveAll(List.of(
+                    new Coffee("Espresso"),
+                    new Coffee("Cappuccino"),
+                    new Coffee("Latte"),
+                    new Coffee("Ristretto"),
+                    new Coffee("Macchiato")
+            ));
         }
     }
 
