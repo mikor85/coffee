@@ -172,6 +172,7 @@ public class CoffeeController {
     // чтобы попытаться "нащупать" название этой функции.
 
     @GetMapping("/name/{name}")
+    //@PatchMapping("/{name}")
     public List<Coffee> getCoffeeByName(
             @PathVariable(name = "name") String name) {
 

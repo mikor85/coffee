@@ -14,4 +14,5 @@ public interface CoffeeRepository extends CrudRepository<Coffee, String> {
 
     //@Query("SELECT * FROM Coffee WHERE name LIKE %:name%")
     List<Coffee> findByNameLike(/*@Param("name")*/ String name);
+    //List<Coffee> findByNameContaining(/*@Param("name")*/ String name);
 }
